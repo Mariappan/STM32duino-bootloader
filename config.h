@@ -320,14 +320,14 @@
     #define LED_BANK            GPIOB
     #define LED_PIN             12
     #define LED_ON_STATE        1
-    #define BOOTLOADER_WAIT 10
+    #define BOOTLOADER_WAIT     10
 
-    #define BUTTON_BANK      GPIOA
-    #define BUTTON_PIN           3
+    #define BUTTON_BANK         GPIOA
+    #define BUTTON_PIN           0
     #define BUTTON_PRESSED_STATE 1
 
-    #define BUTTON1_BANK      GPIOB
-    #define BUTTON1_PIN           0
+    #define BUTTON1_BANK        GPIOB
+    #define BUTTON1_PIN           13
 
 #elif defined TARGET_HYTINY_STM32F103T
 
