@@ -132,6 +132,7 @@ generic-pb7: begin clean gccversion build_generic-pb7 sizeafter finished  copy_g
 generic-pb0: begin clean gccversion build_generic-pb0 sizeafter finished  copy_generic-pb0 end
 stbee :  begin clean gccversion build_stbee sizeafter finished  copy_stbee end
 naze32: begin clean gccversion build_naze32 sizeafter finished  copy_naze32 end
+generic-pb2: begin clean gccversion build_generic-pb2 sizeafter finished  copy_generic-pb2 end
 generic-pb12: begin clean gccversion build_generic-pb12 sizeafter finished  copy_generic-pb12 end
 hytiny-stm32f103t: begin clean gccversion build_hytiny-stm32f103t sizeafter finished  copy_hytiny-stm32f103t end
 dso138: begin clean gccversion build_dso138 sizeafter finished  copy_dso138 end
@@ -361,6 +362,17 @@ copy_naze32:
 	@echo "Copying to binaries folder"
 	@echo
 	cp $(TARGET).bin bootloader_only_binaries/naze32_boot20.bin
+	@echo
+
+build_generic-pb2: TARGETFLAGS= -DTARGET_GENERIC_F103_PB2  $(DEFINES)
+# Set the linker script
+build_generic-pb2: LDFLAGS +=-T$(ST_LIB)/c_only_md_high_density.ld
+build_generic-pb2: elf bin lss sym
+copy_generic-pb2:
+	@echo
+	@echo "Copying to binaries folder"
+	@echo
+	cp $(TARGET).bin bootloader_only_binaries/generic_boot20_pb2.bin
 	@echo
 
 build_generic-pb12: TARGETFLAGS= -DTARGET_GENERIC_F103_PB12  $(DEFINES)

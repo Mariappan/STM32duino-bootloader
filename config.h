@@ -326,8 +326,21 @@
     #define BUTTON_PIN           0
     #define BUTTON_PRESSED_STATE 1
 
+    // This pin will be set high and read the above pin logic level
+    // For matrix kind of keys
     #define BUTTON1_BANK        GPIOB
     #define BUTTON1_PIN           13
+
+#elif defined TARGET_GENERIC_F103_PB2
+
+    #define LED_BANK            GPIOB
+    #define LED_PIN             2
+    #define LED_ON_STATE        1
+    #define BOOTLOADER_WAIT     10
+
+    #define BUTTON_BANK         GPIOA
+    #define BUTTON_PIN           0
+    #define BUTTON_PRESSED_STATE 1
 
 #elif defined TARGET_HYTINY_STM32F103T
 
